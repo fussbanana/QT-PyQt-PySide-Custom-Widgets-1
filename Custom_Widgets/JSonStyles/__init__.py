@@ -73,7 +73,7 @@ def applyJsonStyle(self, update = False):
             if not hasattr(self, 'qss_watcher') and not hasattr(self, 'liveCompileQss'):
                 self.liveCompileQss = True
                 QSsFileMonitor.start_qss_file_listener(self)
-            
+
         else:
             self.liveCompileQss = False
             # QSsFileMonitor.stop_qss_file_listener(self)
@@ -121,7 +121,7 @@ def applyJsonStyle(self, update = False):
 
                                 if not hasattr(self.ui, theme_name):
                                     setattr(self.ui, theme_name, Object())
-                                
+
                                 theme = getattr(self.ui, theme_name)
                                 theme.name = theme_name
 
@@ -181,11 +181,11 @@ def applyJsonStyle(self, update = False):
             lightTheme.defaultTheme = False
             lightTheme.createNewIcons = True
             themes.append(lightTheme)
-            
+
     if update:
         # create theme color variables(check Qss\scss\_variables.scss file inside your project folder)
         CreateColorVariable.CreateVariables(self)
-    
+
     ## QCARDS
     if "QCard" in data:
         for QCard in data['QCard']:
@@ -253,7 +253,7 @@ def applyJsonStyle(self, update = False):
                             btn.clicked.connect(self.checkButtonGroup)
                     else:
                         raise Exception("Error: Button named "+str(button)+" was not found.")
-                        
+
 
 
             activeStyle = ""
@@ -571,9 +571,9 @@ def applyJsonStyle(self, update = False):
                             self.floatingWidgets.append(containerWidget)
                         else:
 
-                            
+
                             # Floating widgets
-                            
+
                             self.floatingWidgets = []
                             self.floatingWidgets.append(containerWidget)
 
@@ -774,12 +774,12 @@ def applyJsonStyle(self, update = False):
                 # Set window tittle
                 self.setWindowTitle(str(QMainWindow["tittle"]))
 
-            if "icon" in QMainWindow and len(str(QMainWindow["icon"])) > 0:  
+            if "icon" in QMainWindow and len(str(QMainWindow["icon"])) > 0:
                 # Set window Icon
                 self.setWindowIcon(QIcon(str(QMainWindow["icon"])))
 
             if not update:
-                if "frameless" in QMainWindow and QMainWindow["frameless"]:   
+                if "frameless" in QMainWindow and QMainWindow["frameless"]:
                     ## # Remove window tittle bar
                     self.setWindowFlags(Qt.FramelessWindowHint)
 
@@ -811,7 +811,7 @@ def applyJsonStyle(self, update = False):
                                 self.shadow.setYOffset(int(shadow['yOffset']))
                             else:
                                 self.shadow.setYOffset(0)
- 
+
                             ## # Appy shadow to central widget
                             getattr(self.ui, str(shadow["centralWidget"])).setGraphicsEffect(self.shadow)
 
@@ -820,19 +820,19 @@ def applyJsonStyle(self, update = False):
             if "navigation" in QMainWindow:
                 for navigation in QMainWindow["navigation"]:
                     if "minimize" in navigation and len(str(navigation["minimize"])) > 0:
-                        
+
                         #Minimize window
                         if hasattr(self.ui, str(navigation["minimize"])):
                             getattr(self.ui, str(navigation["minimize"])).clicked.connect(lambda: self.showMinimized())
 
                     if "close" in navigation and len(str(navigation["close"])) > 0:
-                        
+
                         #Close window
                         if hasattr(self.ui, str(navigation["close"])):
                             getattr(self.ui, str(navigation["close"])).clicked.connect(lambda: self.close())
 
                     if "restore" in navigation:
-                        
+
                         #Restore/Maximize window
                         for restore in navigation["restore"]:
                             if "buttonName" in restore and len(str(restore["buttonName"])) > 0:
@@ -861,7 +861,7 @@ def applyJsonStyle(self, update = False):
                         # Add click event/Mouse move event/drag event to the top header to move the window
                         if hasattr(self.ui, str(navigation["moveWindow"])):
                             getattr(self.ui, str(navigation["moveWindow"])).mouseMoveEvent = self.moveWindow
-                        
+
 
                     if "tittleBar" in navigation and len(str(navigation["tittleBar"])) > 0:
                         # Add click event/Mouse move event/drag event to the top header to move the window
@@ -1081,11 +1081,11 @@ def applyJsonStyle(self, update = False):
 
                     if not containerWidget.metaObject().className() == "QCustomProgressIndicator":
                         raise Exception("Error: "+str(QCustomProgressIndicator["name"])+" is not a QCustomProgressIndicator widget")
-                    
+
                     if "color" in QCustomProgressIndicator:
                         containerWidget.color = self.getThemeVariableValue(str(QCustomProgressIndicator["color"]))
                         containerWidget.updateFormProgressIndicator(color = containerWidget.color)
-                    
+
                     if "fillColor" in QCustomProgressIndicator:
                         containerWidget.fillColor = self.getThemeVariableValue(str(QCustomProgressIndicator["fillColor"]))
                         containerWidget.updateFormProgressIndicator(fillColor = containerWidget.fillColor)
@@ -1109,11 +1109,11 @@ def applyJsonStyle(self, update = False):
                     if "formProgressAnimationDuration" in QCustomProgressIndicator:
                         containerWidget.formProgressAnimationDuration = int(QCustomProgressIndicator["formProgressAnimationDuration"])
                         containerWidget.updateFormProgressIndicator(formProgressAnimationDuration = containerWidget.formProgressAnimationDuration)
-                    
+
                     if "formProgressAnimationEasingCurve" in QCustomProgressIndicator:
                         containerWidget.formProgressAnimationEasingCurve = str(QCustomProgressIndicator["formProgressAnimationEasingCurve"])
                         containerWidget.updateFormProgressIndicator(formProgressAnimationEasingCurve = containerWidget.formProgressAnimationEasingCurve)
-                    
+
                     if "height" in QCustomProgressIndicator:
                         containerWidget.height = int(QCustomProgressIndicator["height"])
                         containerWidget.updateFormProgressIndicator(height = containerWidget.height)
@@ -1121,7 +1121,7 @@ def applyJsonStyle(self, update = False):
                     if "width" in QCustomProgressIndicator:
                         containerWidget.width = int(QCustomProgressIndicator["width"])
                         containerWidget.updateFormProgressIndicator(width = containerWidget.width)
-                    
+
                     if "startPercentage" in QCustomProgressIndicator:
                         containerWidget.startPercentage = int(QCustomProgressIndicator["startPercentage"])
                         containerWidget.updateFormProgressIndicator(startPercentage = containerWidget.startPercentage)
@@ -1152,15 +1152,15 @@ def applyJsonStyle(self, update = False):
 
                         if not containerWidget.metaObject().className() == "QCustomCheckBox":
                             raise Exception("Error: "+str(checkBox)+" is not a QCustomCheckBox widget")
-                        
+
                         if "bgColor" in QCustomCheckBox:
                             containerWidget.bgColor = QColor(self.getThemeVariableValue(str(QCustomCheckBox["bgColor"])))
                             containerWidget.customizeQCustomCheckBox(bgColor = containerWidget.bgColor)
-                        
+
                         if "circleColor" in QCustomCheckBox:
                             containerWidget.circleColor = QColor(self.getThemeVariableValue(str(QCustomCheckBox["circleColor"])))
                             containerWidget.customizeQCustomCheckBox(circleColor = containerWidget.circleColor)
-                        
+
                         if "activeColor" in QCustomCheckBox:
                             containerWidget.activeColor = QColor(self.getThemeVariableValue(str(QCustomCheckBox["activeColor"])))
                             containerWidget.customizeQCustomCheckBox(activeColor = containerWidget.activeColor)
@@ -1175,7 +1175,7 @@ def applyJsonStyle(self, update = False):
 
                     else:
                         raise Exception("Error: "+str(checkBox)+" widget does not exist")
-                    
+
 def replace_url_prefix(url, new_prefix):
     pattern = re.compile(r':/[^/]+/')
     return pattern.sub( new_prefix + '/', url, 1)

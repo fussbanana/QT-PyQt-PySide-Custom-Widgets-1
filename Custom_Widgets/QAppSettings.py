@@ -7,7 +7,6 @@
 ########################################################################
 ## IMPORTS
 ########################################################################
-import os
 
 ########################################################################
 ## MODULE UPDATED TO USE QT.PY
@@ -16,10 +15,11 @@ from qtpy.QtCore import QCoreApplication, QSettings
 
 from Custom_Widgets.Qss.SassCompiler import CompileStyleSheet
 
+
 ########################################################################
 ## QT APP SETTINGS
 ########################################################################
-class QAppSettings():
+class QAppSettings:
     def __init__(self, parent=None):
         super(QAppSettings, self).__init__(parent)
         ########################################################################
@@ -27,13 +27,12 @@ class QAppSettings():
         ########################################################################
 
     def updateAppSettings(self, generateIcons: bool = True, reloadJson: bool = True):
-
-        if len(str(self.orginazationName)) > 0:
-            QCoreApplication.setOrganizationName(str(self.orginazationName))
+        if len(str(self.organizationMame)) > 0:
+            QCoreApplication.setOrganizationName(str(self.organizationMame))
         if len(str(self.applicationName)) > 0:
             QCoreApplication.setApplicationName(str(self.applicationName))
-        if len(str(self.orginazationDomain)) > 0:
-            QCoreApplication.setOrganizationDomain(str(self.orginazationDomain))
+        if len(str(self.organizationDomain)) > 0:
+            QCoreApplication.setOrganizationDomain(str(self.organizationDomain))
 
         settings = QSettings()
 
@@ -43,14 +42,13 @@ class QAppSettings():
                     # update app theme
                     settings.setValue("THEME", theme.name)
 
-
         #######################################################################
         # APPLY COMPILED STYLESHEET
         #######################################################################
         if reloadJson:
-            self.reloadJsonStyles(update = True)
-            
-        CompileStyleSheet.applyCompiledSass(self, generateIcons = generateIcons)
+            self.reloadJsonStyles(update=True)
+
+        CompileStyleSheet.applyCompiledSass(self, generateIcons=generateIcons)
 
 
 ########################################################################

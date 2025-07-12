@@ -1,12 +1,12 @@
 {
-	"QMainWindow":[
+	"QMainWindow": [
 		{
-			"tittle":"My New Tittle",
-			"icon":":/icons/icons/github.svg",
+			"title": "My New title",
+			"icon": ":/icons/icons/github.svg",
 			"frameless": true,
 			"transluscentBg": true,
 			"sizeGrip": "size_grip",
-			"shadow":[
+			"shadow": [
 				{
 					"color": "#fff",
 					"blurRadius": 20,
@@ -15,19 +15,19 @@
 					"centralWidget": "centralwidget"
 				}
 			],
-			"navigation":[
+			"navigation": [
 				{
-					"minimize":"minimize_window_button",
+					"minimize": "minimize_window_button",
 					"close": "close_window_button",
-					"restore":[
-						{	
+					"restore": [
+						{
 							"buttonName": "restore_window_button",
 							"normalIcon": ":/icons/icons/maximize-2.svg",
 							"maximizedIcon": ":/icons/icons/minimize-2.svg"
 						}
 					],
 					"moveWindow": "header_widget",
-					"tittleBar": "header_widget"
+					"titleBar": "header_widget"
 				}
 			]
 		}

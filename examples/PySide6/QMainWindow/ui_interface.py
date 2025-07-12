@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacekaiaxN.ui'
+## Form generated from reading UI file 'interfaceEnuQZS.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.10
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *  # type: ignore
-from PySide2.QtGui import *  # type: ignore
-from PySide2.QtWidgets import *  # type: ignore
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
+    QMainWindow, QPushButton, QSizePolicy, QVBoxLayout,
+    QWidget)
 import icons_rc
 
 class Ui_MainWindow(object):
@@ -31,8 +37,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.main_body = QFrame(self.centralwidget)
         self.main_body.setObjectName(u"main_body")
-        self.main_body.setFrameShape(QFrame.StyledPanel)
-        self.main_body.setFrameShadow(QFrame.Raised)
+        self.main_body.setFrameShape(QFrame.Shape.StyledPanel)
+        self.main_body.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout = QVBoxLayout(self.main_body)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -51,8 +57,8 @@ class Ui_MainWindow(object):
 
         self.frame = QFrame(self.header_widget)
         self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_4 = QHBoxLayout(self.frame)
         self.horizontalLayout_4.setSpacing(5)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -60,7 +66,7 @@ class Ui_MainWindow(object):
         self.minimize_window_button = QPushButton(self.frame)
         self.minimize_window_button.setObjectName(u"minimize_window_button")
         icon = QIcon()
-        icon.addFile(u":/icons/icons/arrow-down-left.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icons/icons/arrow-down-left.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.minimize_window_button.setIcon(icon)
 
         self.horizontalLayout_4.addWidget(self.minimize_window_button)
@@ -68,7 +74,7 @@ class Ui_MainWindow(object):
         self.restore_window_button = QPushButton(self.frame)
         self.restore_window_button.setObjectName(u"restore_window_button")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/icons/maximize-2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icons/icons/maximize-2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.restore_window_button.setIcon(icon1)
 
         self.horizontalLayout_4.addWidget(self.restore_window_button)
@@ -76,26 +82,26 @@ class Ui_MainWindow(object):
         self.close_window_button = QPushButton(self.frame)
         self.close_window_button.setObjectName(u"close_window_button")
         icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/x.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/icons/icons/x.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.close_window_button.setIcon(icon2)
 
         self.horizontalLayout_4.addWidget(self.close_window_button)
 
 
-        self.horizontalLayout_2.addWidget(self.frame, 0, Qt.AlignRight|Qt.AlignTop)
+        self.horizontalLayout_2.addWidget(self.frame, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTop)
 
 
         self.verticalLayout.addWidget(self.header_widget)
 
         self.main_body_contents = QFrame(self.main_body)
         self.main_body_contents.setObjectName(u"main_body_contents")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.main_body_contents.sizePolicy().hasHeightForWidth())
         self.main_body_contents.setSizePolicy(sizePolicy)
-        self.main_body_contents.setFrameShape(QFrame.StyledPanel)
-        self.main_body_contents.setFrameShadow(QFrame.Raised)
+        self.main_body_contents.setFrameShape(QFrame.Shape.StyledPanel)
+        self.main_body_contents.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_11 = QVBoxLayout(self.main_body_contents)
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
@@ -107,25 +113,24 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet(u"border: 5px solid rgb(230, 5, 64);\n"
 "border-radius: 30px;")
         self.label_5.setPixmap(QPixmap(u":/icons/icons/github.svg"))
-        self.label_5.setAlignment(Qt.AlignCenter)
+        self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.label_5, 0, Qt.AlignHCenter|Qt.AlignBottom)
+        self.verticalLayout_11.addWidget(self.label_5, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignBottom)
 
         self.label_6 = QLabel(self.main_body_contents)
         self.label_6.setObjectName(u"label_6")
         font = QFont()
         font.setPointSize(20)
         font.setBold(True)
-        font.setWeight(75)
         self.label_6.setFont(font)
-        self.label_6.setAlignment(Qt.AlignCenter)
+        self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_11.addWidget(self.label_6, 0, Qt.AlignHCenter|Qt.AlignTop)
+        self.verticalLayout_11.addWidget(self.label_6, 0, Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.frame_2 = QFrame(self.main_body_contents)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.frame_2)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -134,10 +139,10 @@ class Ui_MainWindow(object):
         self.size_grip.setObjectName(u"size_grip")
         self.size_grip.setMinimumSize(QSize(10, 10))
         self.size_grip.setMaximumSize(QSize(10, 10))
-        self.size_grip.setFrameShape(QFrame.StyledPanel)
-        self.size_grip.setFrameShadow(QFrame.Raised)
+        self.size_grip.setFrameShape(QFrame.Shape.StyledPanel)
+        self.size_grip.setFrameShadow(QFrame.Shadow.Raised)
 
-        self.horizontalLayout_3.addWidget(self.size_grip, 0, Qt.AlignRight|Qt.AlignBottom)
+        self.horizontalLayout_3.addWidget(self.size_grip, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignBottom)
 
 
         self.verticalLayout_11.addWidget(self.frame_2)

@@ -2,16 +2,16 @@
     "ShowLogs": false,
     "QMainWindow": [
         {
-            "tittle": "QT Settings Session",
-            "icon":":/icons/icons/tiktok_logo_icon_134006.png",
+            "title": "QT Settings Session",
+            "icon": ":/icons/icons/tiktok_logo_icon_134006.png",
             "frameless": true,
             "transluscentBg": true,
             "sizeGrip": "sizeGrip",
-            "navigation":[
+            "navigation": [
                 {
                     "close": "exit",
                     "moveWindow": "header",
-                    "tittleBar": "header"
+                    "titleBar": "header"
                 }
             ]
         }
@@ -113,12 +113,12 @@
             ]
         }
     ],
-    "QCustomQStackedWidget":[
+    "QCustomQStackedWidget": [
         {
-            "name":"mainPages",
-            "navigation":[
+            "name": "mainPages",
+            "navigation": [
                 {
-                    "navigationButtons":[
+                    "navigationButtons": [
                         {
                             "loginBtn": "loginPage",
                             "signUpBtn": "signUpPage"
